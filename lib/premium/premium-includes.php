@@ -12,8 +12,8 @@ require_once 'content/fancy-landing.php'; // Shortcodes for our "fancy" landing 
 
 //Initialize the update checker.
 $update_checker = new ThemeUpdateChecker(
-    'ci-modern-accounting-firm',
-    'http://ci-modern-accounting-firm.mystagingwebsite.com/downloads/themes/ci-modern-accounting-firm_version_metadata.json',
+    'ci-modern-doctors-office',
+    'http://ci-modern-doctors-office.mystagingwebsite.com/downloads/themes/ci-modern-doctors-office_version_metadata.json',
     true
 );
 

@@ -43,67 +43,67 @@ function ciDisplayFontCustomizationOptions($wp_customize) {
     );
 
     $wp_customize->add_panel('fonts', array(
-        'title' => __('Fonts', 'ci-modern-accounting-firm'),
-        'description' => __('<p>Here, you can use just about any font you find in the <a href="http://www.google.com/fonts/" target="_blank">Google Fonts directory</a>.</p><p><strong>NOTE</strong>: It is recommended that you use a maximum of two to three fonts. More fonts will slow down page loads and generally look less professional.</p>', 'ci-modern-accounting-firm'),
+        'title' => __('Fonts', 'ci-modern-doctors-office'),
+        'description' => __('<p>Here, you can use just about any font you find in the <a href="http://www.google.com/fonts/" target="_blank">Google Fonts directory</a>.</p><p><strong>NOTE</strong>: It is recommended that you use a maximum of two to three fonts. More fonts will slow down page loads and generally look less professional.</p>', 'ci-modern-doctors-office'),
         'priority' => 40
     ));
-    $wp_customize->add_section('fonts-titles', array('title' => __('Page Title (H1) Font', 'ci-modern-accounting-firm'), 'panel' => 'fonts'));
+    $wp_customize->add_section('fonts-titles', array('title' => __('Page Title (H1) Font', 'ci-modern-doctors-office'), 'panel' => 'fonts'));
     ciAddCustomizationsToSection($wp_customize, $titleFontOptions, 'fonts-titles');
-    $wp_customize->add_section('fonts-headings', array('title' => __('Headings (H2, H3, H4) Font', 'ci-modern-accounting-firm'), 'panel' => 'fonts'));
+    $wp_customize->add_section('fonts-headings', array('title' => __('Headings (H2, H3, H4) Font', 'ci-modern-doctors-office'), 'panel' => 'fonts'));
     ciAddCustomizationsToSection($wp_customize, $headingFontOptions, 'fonts-headings');
-    $wp_customize->add_section('fonts-body', array('title' => __('Body Font', 'ci-modern-accounting-firm'), 'panel' => 'fonts'));
+    $wp_customize->add_section('fonts-body', array('title' => __('Body Font', 'ci-modern-doctors-office'), 'panel' => 'fonts'));
     ciAddCustomizationsToSection($wp_customize, $bodyFontOptions, 'fonts-body');
-    $wp_customize->add_section('fonts-widgets', array('title' => __('Widget Title Font', 'ci-modern-accounting-firm'), 'panel' => 'fonts'));
+    $wp_customize->add_section('fonts-widgets', array('title' => __('Widget Title Font', 'ci-modern-doctors-office'), 'panel' => 'fonts'));
     ciAddCustomizationsToSection($wp_customize, $widgetFontOptions, 'fonts-widgets');
-    $wp_customize->add_section('fonts-menu', array('title' => __('Menu Font', 'ci-modern-accounting-firm'), 'panel' => 'fonts'));
+    $wp_customize->add_section('fonts-menu', array('title' => __('Menu Font', 'ci-modern-doctors-office'), 'panel' => 'fonts'));
     ciAddCustomizationsToSection($wp_customize, $menuFontOptions, 'fonts-menu');
 }
 
 function ciGetSocialCustomizationOptions() {
     return array(
         array(
-            'label' => __('Facebook URL', 'ci-modern-accounting-firm'),
-            'description' => __('URL for your company\'s Facebook page. <br>(To hide the Facebook icon, leave this blank.)', 'ci-modern-accounting-firm'),
+            'label' => __('Facebook URL', 'ci-modern-doctors-office'),
+            'description' => __('URL for your company\'s Facebook page. <br>(To hide the Facebook icon, leave this blank.)', 'ci-modern-doctors-office'),
             'slug' => 'fb',
             'placeholder' => 'http://facebook.com/',
             'type' => 'text'
         ),
         array(
-            'label' => __('Twitter URL', 'ci-modern-accounting-firm'),
-            'description' => __('URL for your company\'s Twitter page. <br />(To hide the Twitter icon, leave this blank.)', 'ci-modern-accounting-firm'),
+            'label' => __('Twitter URL', 'ci-modern-doctors-office'),
+            'description' => __('URL for your company\'s Twitter page. <br />(To hide the Twitter icon, leave this blank.)', 'ci-modern-doctors-office'),
             'slug' => 'twitter',
             'placeholder' => 'https://twitter.com/',
             'type' => 'text'
         ),
         array(
-            'label' => __('LinkedIn URL', 'ci-modern-accounting-firm'),
-            'description' => __('URL for your company\'s LinkedIn page. <br />(To hide the LinkedIn icon, leave this blank.)', 'ci-modern-accounting-firm'),
+            'label' => __('LinkedIn URL', 'ci-modern-doctors-office'),
+            'description' => __('URL for your company\'s LinkedIn page. <br />(To hide the LinkedIn icon, leave this blank.)', 'ci-modern-doctors-office'),
             'slug' => 'linkedin',
             'placeholder' => 'http://www.linkedin.com/in/',
             'type' => 'text'
         ),
         array(
-            'label' => __('Google+ URL', 'ci-modern-accounting-firm'),
-            'description' => __('URL for your company\'s Google+ page. <br />(To hide the Google+ icon, leave this blank.)', 'ci-modern-accounting-firm'),
+            'label' => __('Google+ URL', 'ci-modern-doctors-office'),
+            'description' => __('URL for your company\'s Google+ page. <br />(To hide the Google+ icon, leave this blank.)', 'ci-modern-doctors-office'),
             'slug' => 'gplus',
             'placeholder' => 'https://plus.google.com/',
             'type' => 'text'
         ),
         array(
-            'label' => __('Google+ link is to: ', 'ci-modern-accounting-firm'),
-            'description' => __('If you like, you can associate all pages of your site with an individual author or your organization. (<a href="http://www.searchenginejournal.com/claiming-google-authorship-and-publisher-markup-for-seo/61263/" target="_blank">More info</a>)', 'ci-modern-accounting-firm'),
+            'label' => __('Google+ link is to: ', 'ci-modern-doctors-office'),
+            'description' => __('If you like, you can associate all pages of your site with an individual author or your organization. (<a href="http://www.searchenginejournal.com/claiming-google-authorship-and-publisher-markup-for-seo/61263/" target="_blank">More info</a>)', 'ci-modern-doctors-office'),
             'slug' => 'gplus_authorship',
             'default' => 'organization',
             'type' => 'select',
             'options' => $test_array = array(
-                'author' => __('The site\'s primary "author"', 'ci-modern-accounting-firm'),
-                'organization' => __('Your company', 'ci-modern-accounting-firm'),
-                'none' => __('None', 'ci-modern-accounting-firm')
+                'author' => __('The site\'s primary "author"', 'ci-modern-doctors-office'),
+                'organization' => __('Your company', 'ci-modern-doctors-office'),
+                'none' => __('None', 'ci-modern-doctors-office')
             )
         ),
         array(
-            'label' => __('Display social media icons in full color?', 'ci-modern-accounting-firm'),
-            'description' => __('', 'ci-modern-accounting-firm'),
+            'label' => __('Display social media icons in full color?', 'ci-modern-doctors-office'),
+            'description' => __('', 'ci-modern-doctors-office'),
             'slug' => 'social_icons_full_color',
             'default' => false,
             'type' => 'select',
@@ -120,15 +120,15 @@ function ciGetFullWidthContainerOption() {
         'slug' => 'full_width_container',
         'type' => 'checkbox',
         'default' => 0,
-        'label' => __('Make Pages Full-Width?', 'ci-modern-accounting-firm')
+        'label' => __('Make Pages Full-Width?', 'ci-modern-doctors-office')
     );
 }
 
 function ciGetColorThemeOption() {
     $colorPath = get_template_directory_uri() . '/assets/img/colors/';
     return array(
-        'label' => __("Color Theme", 'ci-modern-accounting-firm'),
-        'description' => __("By default, we use a light blue-and-charcoal color theme. You can select a different theme here. <strong>NOTE</strong>: Your settings below will override this.", 'ci-modern-accounting-firm'),
+        'label' => __("Color Theme", 'ci-modern-doctors-office'),
+        'description' => __("By default, we use a light blue-and-charcoal color theme. You can select a different theme here. <strong>NOTE</strong>: Your settings below will override this.", 'ci-modern-doctors-office'),
         'slug' => "color_theme",
         'default' => "blue_charcoal",
         'type' => "radio-images",

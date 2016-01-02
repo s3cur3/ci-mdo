@@ -4,7 +4,7 @@ body {
     }
 </style>
 
-Documentation: The Modern Accounting Firm Theme
+Documentation: The Modern Doctor's Office Theme
 =============================================
 
 - **Theme creator**: [Tyler Young][] of [Conversion Insights][]
@@ -12,7 +12,7 @@ Documentation: The Modern Accounting Firm Theme
 
 Thanks for using my theme. If you have any questions that are beyond the scope of this help file, feel free to email me at <tyler@conversioninsights.net>.
 
-If you need support, customization, or help with your accounting firm's Web marketing, [email me](mailto:tyler@conversioninsights.net) and I'll do my best to help.
+If you need support, customization, or help with your medical office's Web marketing, [email me](mailto:tyler@conversioninsights.net) and I'll do my best to help.
 
 ### Table of Contents
 - [Getting Started](#gettingstarted)
@@ -48,7 +48,7 @@ To install the theme, do the following:
 2. Click **Appearance** in the left-hand menu. This will load the theme selection page.
 3. Near the top of the page, just to the right of the word "Themes," click the **Add New** button.
 4. Near the top of the page, just to the right of "Add Themes," click the **Upload Theme** button.
-5. Select the `ci-modern-accounting-firm.zip` file from your computer and click **Install Now**.
+5. Select the `ci-modern-doctors-office.zip` file from your computer and click **Install Now**.
 6. When the installation finishes, click the **Activate** link that appears.
 7. Immediately upon activating, WordPress will prompt you to make a number of changes (create a static front page, change permalink structure, and so on). **If you are creating a *new* site**, it is recommended that you say "yes" to each of these, then press the **Save Changes** button. If you are changing the theme of an existing site, you may not want to do this.
 8. Finally, after activating the theme, there will be a number of "recommended plugins" displayed at the top of the administration pages. See the following section for help installing those plugins.
@@ -73,7 +73,7 @@ With the plugins installed and activated, you can import the sample content by d
 2. Hover your mouse over **Tools** in the left-hand menu, then click **Import**. Select the WordPress option.
 3. You will be prompted to install the Wordpress Importer; simply click the **Install Now** button.
 4. After the installation completes, click the **Activate Plugin & Run Importer** link.
-5. Upload the "sample-content.xml" file included with this theme (found in the `docs` directory of the `ci-modern-accounting-firm.zip` file you downloaded).
+5. Upload the "sample-content.xml" file included with this theme (found in the `docs` directory of the `ci-modern-doctors-office.zip` file you downloaded).
 6. After the import is complete, visit the Pages section of the Admin menu to see the sample pages.
 
 ### Setting up Google Analytics
@@ -127,8 +127,8 @@ Image Sliders
 
 This theme supports image sliders in two places: 
 
-- at the top of the page (as seen on the [Default Home Page](http://ci-modern-accounting-firm.mystagingwebsite.com/)), and
-- within the page (seen on the [Alternate Home Page Layout](http://ci-modern-accounting-firm.mystagingwebsite.com/layouts/home/)).
+- at the top of the page (as seen on the [Default Home Page](http://ci-modern-doctors-office.mystagingwebsite.com/)), and
+- within the page (seen on the [Alternate Home Page Layout](http://ci-modern-doctors-office.mystagingwebsite.com/layouts/home/)).
 
 There are 2 steps to setting up an image slider:
 
@@ -171,7 +171,7 @@ Staff profiles in the theme are very similar to image sliders (see [the previous
 
 When inserting these profiles, you'll be able to choose how many columns to display them in (one staff member per column), and how much of their profile to display---that is, the maximum number of characters to show from their profile.
 
-There is one more place you can display the staff profiles, though. You can use the "All Staff" template on a particular page. This is useful if you would like a page listing all staff members, with links to the individual staff members' pages. Thus, in the demo site, we have created an "[Our Staff](http://ci-modern-accounting-firm.mystagingwebsite.com/our-staff/)" page that uses this template to list all the company's employees. (Note that this page is available *automatically* at `yoursitehere.com/staff/`. Using the "All Staff" template simply gives you a bit more control over the page: you can add some content above the staff profiles, for instance.)
+There is one more place you can display the staff profiles, though. You can use the "All Staff" template on a particular page. This is useful if you would like a page listing all staff members, with links to the individual staff members' pages. Thus, in the demo site, we have created an "[Our Staff](http://ci-modern-doctors-office.mystagingwebsite.com/our-staff/)" page that uses this template to list all the company's employees. (Note that this page is available *automatically* at `yoursitehere.com/staff/`. Using the "All Staff" template simply gives you a bit more control over the page: you can add some content above the staff profiles, for instance.)
 
 
 
@@ -184,7 +184,7 @@ This theme supports both a standard Web page layout (which we describe as being 
 
 ![A paged layout (left) alongside the full-width layout (right) for the same content.](img/full-width-layout.jpg)
 
-When using the standard page layout (the "boxed" layout), you have the opportunity to use a background pattern or image. (For an example of what that looks like, [see the demo site](http://ci-modern-accounting-firm.mystagingwebsite.com/?layout=normal&bg=image).)
+When using the standard page layout (the "boxed" layout), you have the opportunity to use a background pattern or image. (For an example of what that looks like, [see the demo site](http://ci-modern-doctors-office.mystagingwebsite.com/?layout=normal&bg=image).)
 
 With the full-width view, however, some content (like image sliders and colored bands) will stretch to the very edges of the screen. Text content, however, will *not* stretch to the edges of the screen. (To do so would be undesirable---when text columns become too wide, they become very difficult to read.)
 
@@ -276,7 +276,7 @@ The footer is made up of the following elements:
 Setting Up the Blog
 ------------------------------------------------------
 
-To create a [blog page](http://ci-modern-accounting-firm.mystagingwebsite.com/blog/) (a page listing all your blog posts), do the following:
+To create a [blog page](http://ci-modern-doctors-office.mystagingwebsite.com/blog/) (a page listing all your blog posts), do the following:
 
 1. Create a new Page using the Admin's Page editor.
 2. In the "Page Attributes" box in the right-hand sidebar, find the Template field.
@@ -290,7 +290,7 @@ To create a [blog page](http://ci-modern-accounting-firm.mystagingwebsite.com/bl
 Creating the Contact Page
 ------------------------------------------------------
 
-The [contact page](http://ci-modern-accounting-firm.mystagingwebsite.com/contact-us-now/) in the demo theme uses the standard page template, but it relies on the recommended plugin "[Contact Form 7](http://wordpress.org/plugins/contact-form-7/)" (or some other contact form plugin) to work. The Contact Form 7 plugin simply provides a shortcode for displaying a previously created contact form on the page.
+The [contact page](http://ci-modern-doctors-office.mystagingwebsite.com/contact-us-now/) in the demo theme uses the standard page template, but it relies on the recommended plugin "[Contact Form 7](http://wordpress.org/plugins/contact-form-7/)" (or some other contact form plugin) to work. The Contact Form 7 plugin simply provides a shortcode for displaying a previously created contact form on the page.
 
 
 
@@ -464,6 +464,6 @@ Initial release
 
 [Conversion Insights]: http://conversioninsights.net/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation "Conversion Insights: Boost Your Online Revenue"
 
-[Premium]: http://conversioninsights.net/modern-accounting-firm-premium/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation
+[Premium]: http://conversioninsights.net/modern-doctors-office-premium/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation
 
 [Tyler Young]: http://conversioninsights.net/tyler-young/?utm_source=themeDocumentation&utm_medium=web&utm_campaign=documentation "Tyler Young, of Conversion Insights"

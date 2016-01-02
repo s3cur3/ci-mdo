@@ -9,8 +9,8 @@ require_once 'theme/activation.php'; // Upgrade notice
 
 //Initialize the update checker.
 $update_checker = new ThemeUpdateChecker(
-    'ci-modern-accounting-firm-free',
-    'http://ci-modern-accounting-firm.mystagingwebsite.com/downloads/themes/ci-modern-accounting-firm-free_version_metadata.json',
+    'ci-modern-doctors-office-free',
+    'http://ci-modern-doctors-office.mystagingwebsite.com/downloads/themes/ci-modern-doctors-office-free_version_metadata.json',
     true
 );
 
