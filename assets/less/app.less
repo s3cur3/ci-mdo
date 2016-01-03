@@ -393,7 +393,6 @@ div.practice-areas {
 }
 .practice-area h3 {
   font-size: 1.3em;
-  font-weight: bold;
   a {
     text-decoration: none;
     .link-effect-slide-up-underline;
@@ -576,9 +575,8 @@ a, .individual-post .meta a:hover {
   overflow: hidden;
   h3 {
     font-family: @font-family-base;
-    font-size: 1.1em;
+    font-size: 1em;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 0.02em;
   }
   h4 {
@@ -605,9 +603,20 @@ a, .individual-post .meta a:hover {
 }
 .ci-style-clean .widget {
   h3 {
-    border-bottom: 1px solid #999;
     padding-bottom: 5px;
-    font-size: 1.2em;
+    font-size: 1em;
+    position: relative;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 15%;
+      background: #333;
+    }
   }
 }
 

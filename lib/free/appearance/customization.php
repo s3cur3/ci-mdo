@@ -1026,6 +1026,9 @@ function ciPrintCustomColorStyling() {
         .content-info, .content-info a {
             color: <?php echo $copyright_text_color; ?>;
         }
+        .ci-style-clean .widget h3:after {
+            background: <?php echo $btn; ?>;
+        }
 
         @media (max-width: 768px) {
             .carousel-caption.left, .carousel-caption.right {

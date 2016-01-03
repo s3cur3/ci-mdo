@@ -3,43 +3,43 @@
 function ciDisplayFontCustomizationOptions($wp_customize) {
     require_once "FontOptionsBuilder.php";
     $fontOptions = new FontOptionsBuilder();
-    $openSansDefaultVariants = array(
-        '300italic' => '1',
+    $fontVariantsNormalBoldItalic = array(
         '400italic' => '1',
         '700italic' => '1',
         '400' => '1',
-        '300' => '1',
-        '700' => '1',
+        '700' => '1'
     );
+    $serifFallback = 'Georgia, Garamond, sans-serif';
+    $sansFallback = '"Helvetica Neue", Helvetica, Arial, sans-serif';
     $titleFontOptions = array(
-        $fontOptions->getFontFamilySelect('title_font_family', "Bree+Serif"),
+        $fontOptions->getFontFamilySelect('title_font_family', "Montserrat"),
         $fontOptions->getFontFamilyVariants('title_font_variants'),
         $fontOptions->getWeightOption('title_font_weight', '400'),
-        $fontOptions->getFallbackOption('title_font_fallback', 'Georgia, Garamond, sans-serif')
+        $fontOptions->getFallbackOption('title_font_fallback', $sansFallback)
     );
     $headingFontOptions = array(
-        $fontOptions->getFontFamilySelect('heading_font_family', "Bree+Serif"),
-        $fontOptions->getFontFamilyVariants('heading_font_variants'),
+        $fontOptions->getFontFamilySelect('heading_font_family', "Montserrat"),
+        $fontOptions->getFontFamilyVariants('heading_font_variants', $fontVariantsNormalBoldItalic),
         $fontOptions->getWeightOption('heading_font_weight', '400'),
-        $fontOptions->getFallbackOption('body_font_fallback', 'Georgia, Garamond, sans-serif'),
+        $fontOptions->getFallbackOption('body_font_fallback', $sansFallback),
     );
     $bodyFontOptions = array(
-        $fontOptions->getFontFamilySelect('body_font_family', "Open+Sans"),
-        $fontOptions->getFontFamilyVariants('body_font_variants', $openSansDefaultVariants),
+        $fontOptions->getFontFamilySelect('body_font_family', "Lora"),
+        $fontOptions->getFontFamilyVariants('body_font_variants', $fontVariantsNormalBoldItalic),
         $fontOptions->getWeightOption('body_font_weight', '400'),
-        $fontOptions->getFallbackOption('body_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif'),
+        $fontOptions->getFallbackOption('body_font_fallback', $serifFallback),
     );
     $widgetFontOptions = array(
-        $fontOptions->getFontFamilySelect('widget_title_font_family', "Open+Sans"),
-        $fontOptions->getFontFamilyVariants('widget_title_font_variants', $openSansDefaultVariants),
-        $fontOptions->getWeightOption('widget_title_font_weight', '700'),
-        $fontOptions->getFallbackOption('widget_title_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif'),
+        $fontOptions->getFontFamilySelect('widget_title_font_family', "Montserrat"),
+        $fontOptions->getFontFamilyVariants('widget_title_font_variants', $fontVariantsNormalBoldItalic),
+        $fontOptions->getWeightOption('widget_title_font_weight', '400'),
+        $fontOptions->getFallbackOption('widget_title_font_fallback', $sansFallback),
     );
     $menuFontOptions = array(
-        $fontOptions->getFontFamilySelect('menu_font_family', "Open+Sans"),
-        $fontOptions->getFontFamilyVariants('menu_font_variants', $openSansDefaultVariants),
+        $fontOptions->getFontFamilySelect('menu_font_family', "Montserrat"),
+        $fontOptions->getFontFamilyVariants('menu_font_variants', $fontVariantsNormalBoldItalic),
         $fontOptions->getWeightOption('menu_font_weight', '700'),
-        $fontOptions->getFallbackOption('menu_font_fallback', '"Helvetica Neue", Helvetica, Arial, sans-serif'),
+        $fontOptions->getFallbackOption('menu_font_fallback', $sansFallback),
     );
 
     $wp_customize->add_panel('fonts', array(
