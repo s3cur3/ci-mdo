@@ -18,12 +18,8 @@ if(get_option('navbar_fixed', false)) {
 
         <nav class="collapse navbar-collapse" role="navigation"> <?php
             $socialHTML = "";
-            if(function_exists('ciGetSocialLinks')) {
-                $socialInNav = get_option('social_in_nav');
-                $socialHTML = "";
-                if( $socialInNav ) {
-                    $socialHTML = ciGetSocialLinks();
-                }
+            if(function_exists('ciGetSocialLinks') && get_option('social_in_nav', false)) {
+                $socialHTML = ciGetSocialLinks();
             }
 
             $ecommerceHTML = get_option('ecommerce', false) ? "<div class=\"cart-btn\"><a class=\"fa fa-2x fa-shopping-cart\" href=\"/cart/\"></a></div>" : "";
@@ -34,12 +30,20 @@ if(get_option('navbar_fixed', false)) {
                 $additionalNavClass = "text-only";
             } elseif($additionalNavText && $socialHTML) {
                 $additionalNavClass = "text-and-social";
-            }
-
-            if($additionalNavText || $socialHTML || $ecommerceHTML) {
-                echo "<div class=\"post-nav {$additionalNavClass}\">{$additionalNavText}{$ecommerceHTML}{$socialHTML}</div>";
-            }
-
+            } ?>
+            <div class="post-nav <?php echo $additionalNavClass; ?>"><?php
+                if(get_option('search_in_nav', true)) { ?>
+                    <div class="nav-search">
+                        <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
+                            <input type="text" name="s" placeholder="<?php echo esc_attr_x('SEARCH', 'search placeholder', 'ci-modern-doctors-office'); ?>">
+                            <button type="submit" class="header-search-icon" name="submit" id="searchsubmit" value="<?php echo esc_attr_x('Search', 'submit button', 'ci-modern-doctors-office'); ?>">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div> <?php
+                }
+                echo $additionalNavText, $ecommerceHTML, $socialHTML; ?>
+            </div> <?php
             if( has_nav_menu('primary_navigation') ) {
                 wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
             } ?>

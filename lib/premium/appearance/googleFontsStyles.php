@@ -41,7 +41,7 @@ function ciPrintFontStyles() {
         h2, h3 {
             font-weight: <?php echo $h2Weight; ?>;
         }
-        .widget h3, .stats h4, input[type="submit"], .btn {
+        .widget h3, .stats h4, input[type="submit"], .btn, .nav-search {
             font-family: "<?php echo $widgetTitleFamily; ?>", <?php echo $widgetTitleFallback; ?>;
             font-weight: <?php echo $widgetTitleWeight; ?>;
         }

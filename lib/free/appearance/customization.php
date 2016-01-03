@@ -257,7 +257,7 @@ if(class_exists('WP_Customize_Control')) {
 }
 
 function ciReturnIdentity($arg) { return $arg; }
-function ciSanitizeBool($bool) { if($bool == "0" || $bool == false || $bool == "false") { return false; } else { return true; } }
+function ciSanitizeBool($bool) { if($bool === "0" || $bool === false || $bool === "false") { return false; } else { return true; } }
 
 function ciAddCustomizationsToSection($wp_customize, $optionsArray, $sectionSlug) {
     foreach($optionsArray as $option) {
@@ -449,6 +449,12 @@ function ciCustomizeRegister($wp_customize)
             'slug' => 'social_in_nav',
             'default' => false,
             'label' => __('Show social media icons to the right of the nav bar?', 'ci-modern-doctors-office'),
+            'type' => 'checkbox'
+        ),
+        array(
+            'slug' => 'search_in_nav',
+            'default' => true,
+            'label' => __('Show search box to the right of the nav bar?', 'ci-modern-doctors-office'),
             'type' => 'checkbox'
         ),
         array(
@@ -919,7 +925,7 @@ function ciPrintCustomColorStyling() {
             color: <?php echo $h2OnSecondary; ?>;
         }
 
-        a, .individual-post .meta a:hover {
+        a, .individual-post .meta a:hover, .nav-search form button.header-search-icon:hover {
             color: <?php echo $splash; ?>;
         }
         a:hover, a:focus, .employees h3 a {
@@ -935,6 +941,9 @@ function ciPrintCustomColorStyling() {
         .practice-area h3 a:after, .employees h3 a:before {
             background: <?php echo ciAdjustBrightness($splash, -30) ?>;
         }
+        .nav-search form input[type="text"]:focus {
+            outline-color: <?php echo $splash; ?>;
+        }
 
         .navbar-default .navbar-brand {
             color: <?php echo $firm_name; ?>;
@@ -949,7 +958,7 @@ function ciPrintCustomColorStyling() {
         .header-container {
             background: <?php echo $header_bg_color; ?>;
         }
-        .post-nav a {
+        .post-nav a, .nav-search form input:focus {
             color: <?php echo $header_text_color; ?>;
         }
         .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
