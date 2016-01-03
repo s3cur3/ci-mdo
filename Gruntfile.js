@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.initConfig({
+    sftpCredentials: grunt.file.readJSON('sftp-credentials.json'),
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -55,6 +56,21 @@ module.exports = function(grunt) {
         jsHandle: 'roots_scripts'
       }
     },
+    sftp: {
+      dev: {
+        files: {
+          "./": ["assets/css/main.min.css", 'assets/js/scripts.min.js']
+        },
+        options: {
+          "path": "<%= sftpCredentials.path %>",
+          "host": "<%= sftpCredentials.host %>",
+          "username": "<%= sftpCredentials.username %>",
+          "port": "<%= sftpCredentials.port %>",
+          "password": "<%= sftpCredentials.password %>",
+          "showProgress": true
+        }
+      }
+    },
     watch: {
       less: {
         files: [
@@ -81,6 +97,20 @@ module.exports = function(grunt) {
           'templates/*.php',
           '*.php'
         ]
+      },
+      sftp: {
+        files: {
+          "./": ["assets/css/main.min.css", 'assets/js/scripts.min.js']
+        },
+        options: {
+          "path": "<%= sftpCredentials.path %>",
+          "host": "<%= sftpCredentials.host %>",
+          "username": "<%= sftpCredentials.username %>",
+          "port": "<%= sftpCredentials.port %>",
+          "password": "<%= sftpCredentials.password %>",
+          "showProgress": true
+        },
+        tasks: ['sftp:dev']
       }
     },
     clean: {
@@ -93,6 +123,7 @@ module.exports = function(grunt) {
 
   // Load tasks
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-ssh');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -108,6 +139,9 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('dev', [
     'watch'
+  ]);
+  grunt.registerTask('upload', [
+    'sftp'
   ]);
 
 };

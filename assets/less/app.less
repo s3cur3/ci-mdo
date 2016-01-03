@@ -103,6 +103,13 @@ main .pad img {
     max-width: 100%; // Ensure the logo isn't bigger than its container
   }
 }
+.navbar-brand.logo-centered {
+  margin: 0 auto;
+  display: block;
+  width: 330px;
+  float: none;
+  margin-top: 20px;
+}
 
 .navbar-nav>li>a {
   padding-top: 25px;
@@ -134,16 +141,18 @@ main .pad img {
   color: #fff;
 }
 .navbar-default .navbar-nav>.active.open>a {
-  background: @text-color;
+  background: transparent;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
   background: #fff;
 }
 
 .fixed-navbar {
-  margin-top: 10px;
+  margin-top: 20px;
 }
-
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 /* ==========================================================================
    Content
@@ -173,6 +182,7 @@ main .pad img {
   box-shadow: 0 6px darken(@brand-primary, 30%);
   -webkit-transition: none;
   -moz-transition: none;
+  -o-transition: none;
   transition: none;
   position: relative;
   &:hover {
@@ -336,9 +346,10 @@ h1+hr, h2+hr, h3+hr, h4+hr {
   font-size: 0.85em;
   opacity: 0.8;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity @slow-transition-time;
+  -moz-transition: opacity @slow-transition-time;
+  -o-transition: opacity @slow-transition-time;
+  transition: opacity @slow-transition-time;
 }
 .blog .featured-img-caption {
   text-align: left;
@@ -419,9 +430,10 @@ div.practice-areas {
     opacity: 0.95;
     width: 98%;
     padding: 1% 0;
-    -webkit-transition: width 0.5s, opacity 0.5s, padding 0.5s;
-    -moz-transition: width 0.5s, opacity 0.5s, padding 0.5s;
-    transition: width 0.5s, opacity 0.5s, padding 0.5s;
+    -webkit-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
+    -moz-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
+    -o-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
+    transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
     &:hover {
       width: 100%;
       opacity: 1;
@@ -483,9 +495,10 @@ h1, .navbar-brand {
 }
 
 a, .individual-post .meta a:hover {
-  -webkit-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  transition: background 0.3s;
+  -webkit-transition: background @fast-transition-time;
+  -moz-transition: background @fast-transition-time;
+  -o-transition: background @fast-transition-time;
+  transition: background @fast-transition-time;
 }
 
 #breadcrumbs {
@@ -601,21 +614,28 @@ a, .individual-post .meta a:hover {
     }
   }
 }
-.ci-style-clean .widget {
-  h3 {
-    padding-bottom: 5px;
-    font-size: 1em;
-    position: relative;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
-    &:after {
-      position: absolute;
-      content: "";
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 15%;
-      background: #333;
+.ci-style-clean {
+  .navbar-default .navbar-nav>li, .dropdown-menu>li>a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  .widget {
+    h3 {
+      padding-bottom: 5px;
+      font-size: 1em;
+      position: relative;
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      &:after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 15%;
+        background: #333;
+      }
     }
   }
 }
@@ -644,10 +664,10 @@ ul.social-list {
   padding-top: 5px;
   padding-bottom: 5px;
   opacity: 0;
-  -moz-transition: opacity 500ms ease-out;
-  -webkit-transition: opacity 500ms ease-out;
-  -o-transition: opacity 500ms ease-out;
-  transition: opacity 500ms ease-out;
+  -moz-transition: opacity @med-transition-time ease-out;
+  -webkit-transition: opacity @med-transition-time ease-out;
+  -o-transition: opacity @med-transition-time ease-out;
+  transition: opacity @med-transition-time ease-out;
 }
 .individual-post:hover ul.social-list {
   background-color: rgba(255, 255, 255, 0.9);
@@ -824,7 +844,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
      Content
      ========================================================================== */
   .fixed-navbar {
-    margin-top: 60px;
+    margin-top: 20px;
   }
   .page-header {
     padding-top: 0;
@@ -834,7 +854,10 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   }
   .carousel-control {
     .glyphicon-chevron-left, .glyphicon-chevron-right {
-      transition: font-size 0.3s, margin 0.3s, right 0.3s, left 0.3s;
+      -moz-transition: font-size @fast-transition-time, margin @fast-transition-time, right @fast-transition-time, left @fast-transition-time;
+      -webkit-transition: font-size @fast-transition-time, margin @fast-transition-time, right @fast-transition-time, left @fast-transition-time;
+      -o-transition: font-size @fast-transition-time, margin @fast-transition-time, right @fast-transition-time, left @fast-transition-time;
+      transition: font-size @fast-transition-time, margin @fast-transition-time, right @fast-transition-time, left @fast-transition-time;
     }
   }
   .carousel-control:hover {
@@ -899,7 +922,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
      Header
      ========================================================================== */
   .navbar-nav {
-    float: right;
+    float: left;
   }
 
   /* ==========================================================================

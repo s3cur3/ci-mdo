@@ -101,7 +101,7 @@ function ciGetColorTheme() {
         'splash_color' => $link,
         'header_highlight_color' => $link,
         'header_hover_color' => "#ffffff",
-        'header_text_color' => "#777777",
+        'header_text_color' => "#122",
         'firm_name_color' => $name,
         'background_color' => $bg,
         'secondary_background_color' => $secondaryBG,
@@ -597,7 +597,7 @@ function ciCustomizeRegister($wp_customize)
         array(
 
             'slug' => 'header_link_bg_is_solid',
-            'default' => true,
+            'default' => false,
             'label' => __('Active Menu Item Has Solid Background?', 'ci-modern-doctors-office'),
             'type' => 'checkbox'
         ),
@@ -957,7 +957,8 @@ function ciPrintCustomColorStyling() {
             color: <?php echo $header_highlight_color; ?>;
         }
         .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-            color: <?php echo $header_highlight_color; ?>;
+            color: #fff;
+            background-color: <?php echo $header_highlight_color; ?>;
         }
         .post-nav a:hover, .post-nav a:focus {
             color: <?php echo $header_link_bg_is_solid ? ciAdjustBrightness($header_text_color, -130) : $header_hover_color; ?>;
@@ -966,12 +967,13 @@ function ciPrintCustomColorStyling() {
         .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
             color: <?php echo ciAdjustBrightness($header_text_color, -130); ?>;
         }
-        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
-            background: <?php echo $header_link_bg_is_solid ? $header_highlight_color : 'transparent'; ?>;;
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+            background: <?php echo $header_link_bg_is_solid ? $header_highlight_color : 'transparent'; ?>;
             color: <?php echo $header_link_bg_is_solid ? "#fff" : $header_highlight_color; ?>;
         }
-        .navbar-default .navbar-nav>.active.open>a {
-            background: #e7e7e7;
+        .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+            background: <?php echo $header_highlight_color; ?>;;
+            color: #fff;
         }
 
         .navbar-nav > li > a {
