@@ -34,22 +34,26 @@
             }
         }
         function hideSearchIfTooWide() {
-            function hideIfTooWide(element) {
-                function isTooWide() {
-                    var postNav = $(".post-nav");
+            function hideIfTooWide(element, optionalClassToRemove) {
+                function isTooWide(postNav) {
                     var postNavWidth = postNav.is(':visible') ? postNav.outerWidth() : 0;
                     return $(".navbar-nav").outerWidth() + postNavWidth + 3 > $(".navbar-collapse").innerWidth();
                 }
-                if(isTooWide()) {
+                var postNav = $(".post-nav");
+                if(isTooWide(postNav)) {
                     element.hide();
+                    if(optionalClassToRemove) {
+                        postNav.removeClass(optionalClassToRemove);
+                    }
                 }
             }
             var search = $(".nav-search");
             var postNav = $(".post-nav");
             search.show();
+            postNav.addClass("with-search");
             postNav.show();
             if($(window).width() >= 768 - 10) {
-                hideIfTooWide(search);
+                hideIfTooWide(search, "with-search");
                 hideIfTooWide(postNav);
             }
         }

@@ -128,7 +128,7 @@ Image Sliders
 This theme supports image sliders in two places: 
 
 - at the top of the page (as seen on the [Default Home Page](http://ci-modern-doctors-office.mystagingwebsite.com/)), and
-- within the page (seen on the [Alternate Home Page Layout](http://ci-modern-doctors-office.mystagingwebsite.com/layouts/home/)).
+- within the page (seen on the [Alternate Home Page Layout](http://ci-modern-doctors-office.mystagingwebsite.com/layouts/home-2/)).
 
 There are 2 steps to setting up an image slider:
 
@@ -447,9 +447,6 @@ Updates to the Theme
 
 Here's what's been added to the theme through updates:
 
-### Version 1.0.1
-
-Minor bug fixes for image galleries and menu bar.
 
 ### Version 1.0
 Initial release

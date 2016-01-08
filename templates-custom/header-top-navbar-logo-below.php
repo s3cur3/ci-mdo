@@ -25,14 +25,20 @@ if(get_option('navbar_fixed', false)) {
             $ecommerceHTML = get_option('ecommerce', false) ? "<div class=\"cart-btn\"><a class=\"fa fa-2x fa-shopping-cart\" href=\"/cart/\"></a></div>" : "";
 
             $additionalNavText = get_option('additional_menu_text', '');
+            $has_search = get_option('search_in_nav', false);
             $additionalNavClass = "";
-            if($additionalNavText && !($socialHTML || $ecommerceHTML)) {
+            if($socialHTML && !$additionalNavText && !$ecommerceHTML) {
+                $additionalNavClass = "social-only";
+            } elseif($additionalNavText && !($socialHTML || $ecommerceHTML)) {
                 $additionalNavClass = "text-only";
             } elseif($additionalNavText && $socialHTML) {
                 $additionalNavClass = "text-and-social";
+            }
+            if($has_search) {
+                $additionalNavClass .= " with-search";
             } ?>
             <div class="post-nav <?php echo $additionalNavClass; ?>"><?php
-                if(get_option('search_in_nav', true)) { ?>
+                if($has_search) { ?>
                     <div class="nav-search">
                         <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
                             <input type="text" name="s" placeholder="<?php echo esc_attr_x('SEARCH', 'search placeholder', 'ci-modern-doctors-office'); ?>">

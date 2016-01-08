@@ -857,7 +857,13 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    ========================================================================== */
 
 @media (min-width: @screen-xs-min) {
-
+  .post-nav.text-and-social.with-search {
+    width: 420px;
+  }
+  .post-nav.social-only.with-search {
+    width: 420px;
+    padding-top: 14px;
+  }
 }
 @media (min-width: @screen-sm-min) {
   /* ==========================================================================
@@ -876,7 +882,6 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   .buffer {
     padding-top: 30px;
   }
-
 
 
   /* ==========================================================================
@@ -1082,6 +1087,9 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
     right: 25px;
     z-index: 1;
     padding-top: 30.5px;
+    &.social-only, &.with-search:not(.text-and-social) {
+      padding-top: 15px;
+    }
   }
 }
 @media (max-width: @screen-xs-max) {
@@ -1100,6 +1108,12 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   }
   .post-nav {
     text-align: left;
+    &.with-search {
+      width: auto;
+      &.social-only, &.text-and-social {
+        width: auto;
+      }
+    }
   }
   .nav-search {
     float: none;
