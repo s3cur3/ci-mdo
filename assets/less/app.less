@@ -325,9 +325,11 @@ h1+hr, h2+hr, h3+hr, h4+hr {
 .full-page {
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 1.5em auto 0;
 }
-
+.slide.full-page+.wrap {
+  margin-top: 0;
+}
 
 .carousel-inner {
   max-width: 1920px;
@@ -1123,9 +1125,13 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   /* Reduce the size of the caption text on tablet devices */
   .carousel-caption {
     font-size: 1.2em;
-  }
-  .carousel-caption h2 {
-    font-size: 1em;
+    * {
+      display: none;
+    }
+    h2 {
+      font-size: 1em;
+      display: block;
+    }
   }
 }
 
