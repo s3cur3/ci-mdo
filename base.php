@@ -33,8 +33,12 @@ if( current_theme_supports( 'bootstrap-top-navbar' ) ) {
 }
 
 if( $showSlider ) {
-    $sliderCat = ciGetNormalizedMeta( 'top_img_slider_cat_string', '' );
-    echo ciGetSliderHTML( $sliderCat, 10, true, CI_SIZE_LG );
+    if(function_exists('ciGetSliderHTML')) {
+        $sliderCat = ciGetNormalizedMeta( 'top_img_slider_cat_string', '' );
+        echo ciGetSliderHTML( $sliderCat, 10, true, CI_SIZE_LG );
+    } else {
+        echo "<pre>You requested a slider be displayed here, but it looks like the slider plugin (\"Slides Custom Post Type\") is either not installed or not active!</pre>";
+    }
 }
 
 $pushPageDownAmt = intval(ciGetNormalizedMeta('push_page_down', 0));
