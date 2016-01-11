@@ -20,7 +20,8 @@ function ciLoadGoogleFonts() {
         'title' => "Bree+Serif",
         'heading' => "Bree+Serif",
         'widget_title' => "Open+Sans",
-        'body' => "Open+Sans"
+        'body' => "Open+Sans",
+        'menu' => "Open+Sans"
     );
     foreach( $fontLocations as $location => $default ) {
         $optionID = $location . '_font_family';
