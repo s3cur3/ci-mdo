@@ -748,25 +748,23 @@ function ciPrintCustomColorStyling() {
             color: #fff;
         }
 
-        .btn-primary, input[type="submit"], button[type="submit"], .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-            color: #fff;
+        .btn-primary, input[type="submit"], form input[type="submit"], button[type="submit"], .btn,
+        .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+            color: <?php echo $btn; ?>;
             position: relative;
-            background-color: <?php echo $btn; ?>;
-            border-color: <?php echo ciAdjustBrightness($btn, -20) ?>; /* slightly darker */
-            box-shadow: 0 6px <?php echo ciAdjustBrightness($btn, -50); ?>;
+            border-color: <?php echo $btn; ?>;
         }
-        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, input[type="submit"]:hover, button[type="submit"]:hover, input[type="submit"]:focus, button[type="submit"]:focus, form input[type="submit"]:hover, form input[type="submit"]:focus,
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, input[type="submit"]:hover, button[type="submit"]:hover, input[type="submit"]:focus, button[type="submit"]:focus, form input[type="submit"]:hover, form input[type="submit"]:focus, .btn:hover,
         .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce a.button.alt:focus, .woocommerce button.button.alt:focus, .woocommerce input.button.alt:focus, .woocommerce #respond input#submit.alt:active, .woocommerce a.button.alt:active, .woocommerce button.button.alt:active, .woocommerce input.button.alt:active {
-            background-color: <?php echo $btn; ?>;
-            border-color: <?php echo ciAdjustBrightness($btn, -50); ?>;
-            box-shadow: 0 4px <?php echo ciAdjustBrightness($btn, -50); ?>;
-            top: 2px;
             color: #fff;
+            background-color: <?php echo $btn; ?>;
+            border-color: <?php echo $btn; ?>;
         }
-        .btn-primary:active, .btn-primary.active, .sidebar input[type="submit"]:active,
+        .btn-primary:active, .btn-primary.active, .sidebar input[type="submit"]:active, .btn:active,
         .woocommerce #respond input#submit.alt:active, .woocommerce a.button.alt:active, .woocommerce button.button.alt:active, .woocommerce input.button.alt:active {
-            top: 4px;
-            box-shadow: 0 0 <?php echo ciAdjustBrightness($btn, -50); ?>;
+            color: #fff;
+            background-color: <?php echo ciAdjustBrightness($btn, -30) ?>;
+            border-color: <?php echo ciAdjustBrightness($btn, -30) ?>;
         }
         button[type="submit"].search-submit:hover {
             background-color: <?php echo ciAdjustBrightness($btn, -30) ?>;

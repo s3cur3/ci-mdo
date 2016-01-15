@@ -85,6 +85,9 @@ main .pad img {
   margin-top: 500px;
 }
 
+.container-fluid .pad .bx-wrapper {
+  max-width: @container-lg !important;
+}
 
 /* ==========================================================================
    Header
@@ -210,25 +213,25 @@ main .pad img {
   }
 }
 
-.btn-primary, button[type="submit"] {
+.btn-primary, button[type="submit"], .btn {
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 5px solid;
+  background-color: transparent;
   color: #fff;
-  box-shadow: 0 6px darken(@brand-primary, 30%);
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
   position: relative;
-  &:hover {
-    box-shadow: 0 4px darken(@brand-primary, 30%);
-    top: 2px;
-  }
+  text-transform: uppercase;
+  transition: all @med-transition-time;
+  -o-transition: all @med-transition-time;
+  -moz-transition: all @med-transition-time;
+  -webkit-transition: all @med-transition-time;
   &:active {
-    box-shadow: 0 0 darken(@brand-primary, 30%);
-    top: 6px;
+    box-shadow: none;
     outline: none !important;
   }
+}
+.inverted .btn, .carousel-inner .btn {
+  color: #fff !important;
 }
 
 button[type="submit"] {
@@ -253,6 +256,7 @@ button[type="submit"] {
   }
   input[type="submit"], .nsu-submit {
     margin-left: 25%;
+    color: #fff;
   }
 }
 
@@ -451,6 +455,7 @@ div.practice-areas {
     padding-bottom: 0; // has to come after the link effect style, because it auto-sets some padding that we don't like
   }
 }
+@employee-border-color: #555;
 .employees {
   ul {
     list-style-type: none;
@@ -466,20 +471,73 @@ div.practice-areas {
       padding: 0 12px;
     }
   }
+}
+a.staff-name {
+  .link-effect-expand-underline;
+  text-decoration: none !important;
+  padding: 0;
+  &:before {
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
+    transform: scale(.95);
+  }
+}
+.staff-photo-container() {
+  display: block;
+  padding: 1% 0;
+  background: none;
+  -webkit-transition: padding @med-transition-time;
+  -moz-transition: padding @med-transition-time;
+  -o-transition: padding @med-transition-time;
+  transition: padding @med-transition-time;
+  border: 2px solid @employee-border-color;
+  border-radius: 50%;
+  &:hover {
+    padding: 0;
+    background: none;
+  }
+}
+.staff-photo() {
+  height: auto;
+  opacity: 0.95;
+  width: 98%;
+  max-width: 300px !important;
+  padding: 0;
+  -webkit-transition: all @med-transition-time;
+  -moz-transition: all @med-transition-time;
+  -o-transition: all @med-transition-time;
+  transition: all @med-transition-time;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid @employee-border-color;
+  &:hover {
+    width: 100%;
+    opacity: 1;
+    padding: 0;
+    border: 1px solid #fff;
+  }
+}
+.employee {
   img {
-    height: auto;
-    opacity: 0.95;
-    width: 98%;
-    padding: 1% 0;
-    -webkit-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
-    -moz-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
-    -o-transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
-    transition: width @med-transition-time, opacity @med-transition-time, padding @med-transition-time;
-    &:hover {
-      width: 100%;
-      opacity: 1;
-      padding: 0;
-    }
+    .staff-photo;
+  }
+  & > a {
+    .staff-photo-container;
+  }
+}
+.staff {
+  img {
+    .staff-photo;
+    width: 290px;
+    height: 290px;
+  }
+  a.staff-photo-link {
+    .staff-photo-container;
+    width: 300px;
+    height: 300px;
+    padding: 3px 0 5px;
   }
 }
 .testimonials-widget-testimonial .image {
@@ -488,6 +546,14 @@ div.practice-areas {
     margin-left: 170px;
   }
 }
+.single-ci-staff .attachment-post-thumbnail {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid @employee-border-color;
+}
+
 
 figure.alignright {
   margin-left: 12px;

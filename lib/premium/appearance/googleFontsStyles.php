@@ -49,6 +49,9 @@ function ciPrintFontStyles() {
             font-family: "<?php echo $menuFamily; ?>", <?php echo $menuFallback; ?>;
             font-weight: <?php echo $menuWeight; ?>;
         }
+        h1 .btn, h2 .btn, h3 .btn, h4 .btn {
+            font-family: "<?php echo $menuFamily; ?>", <?php echo $menuFallback; ?>;
+        }
     </style>
 <?php
 }
