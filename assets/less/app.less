@@ -540,10 +540,19 @@ a.staff-name {
     padding: 3px 0 5px;
   }
 }
-.testimonials-widget-testimonial .image {
-  margin-right: 1em;
-  & + blockquote {
-    margin-left: 170px;
+.testimonials-widget-testimonial {
+  .image {
+    margin-right: 1em;
+    img {
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      border: 2px solid @employee-border-color;
+    }
+    & + blockquote {
+      margin-left: 170px;
+    }
   }
 }
 .single-ci-staff .attachment-post-thumbnail {
